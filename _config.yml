@@ -1,0 +1,27 @@
+title: Yummy
+email: dany.zh.00@gmail.com
+description: Food is everywhere!
+destination: docs
+baseurl: "/yummy" 
+url: ""
+github_username:  danyzh00
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+exclude:
+  - docs
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - theme-personal
