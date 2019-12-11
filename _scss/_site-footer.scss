@@ -1,0 +1,55 @@
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  background: rgb(234, 237, 242);
+  .main-part {
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      img {
+        height: 7em;
+        width: 25em;
+      }
+      p {
+        width: 40em;
+        padding-bottom: 3em;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        padding-bottom: 0.5em;
+      }
+      .subscribe {
+        padding-bottom: 1.5em;
+        input {
+          border: none;
+          width: 20em;
+          padding: 1em;
+        }
+        button {
+          border: none;
+          background: rgb(252, 2, 84);
+          color: white;
+          width: 13em;
+          padding: 1em;
+        }
+      }
+      .social-media ul{
+        color: rgb(168, 169, 171);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style: none;
+        text-decoration: none;
+      }
+    }
+  }
+}

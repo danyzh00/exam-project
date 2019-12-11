@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr NaNfr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: "miniUp pickBig pickBig mini2up""mini pickBig pickBig mini2down";
+        }
+
+        .pickBig {
+            grid-area: pickBig;
+        }
+
+        .mini {
+            grid-area: mini;
+        }
+
+        .miniUp {
+            grid-area: miniUp;
+        }
+
+        .mini2up {
+            grid-area: mini2up;
+        }
+
+        .mini2down {
+            grid-area: mini2down;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .flex-container .left,
+        .flex-container .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="pickBig"> <img src="../images/recipe-3.jpg" alt=""></div>
+        <div class="mini"><img src="../images/recipe-2.jpg" alt=""></div>
+        <h1>Hello</h1>
+        <div class="miniUp"><img src="../images/recipe-1.jpg" alt=""></div>
+        <div class="mini2up"> <img src="../images/recipe-4.jpg" alt=""></div>
+        <div class="mini2down"> <img src="../images/recipe-5.jpg" alt=""></div>
+    </div>
+
+    <div class="flex-container">
+        <div class="left">
+            <div class="mini"><img src="../images/recipe-2.jpg" alt=""></div>
+            <h1>Hello</h1>
+            <div class="miniUp"><img src="../images/recipe-1.jpg" alt=""></div>
+            <h1>Hello</h1>
+        </div>
+        <div class="pickBig"> <img src="../images/recipe-3.jpg" alt=""></div>
+        <div class="right">
+            <div class="mini2up"> <img src="../images/recipe-4.jpg" alt=""></div>
+            <h1>Hello</h1>
+            <div class="mini2down"> <img src="../images/recipe-5.jpg" alt=""></div>
+            <h1>Hello</h1>
+        </div>
+    </div>
+</body>
+
+</html>
