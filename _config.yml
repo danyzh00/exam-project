@@ -5,8 +5,6 @@ destination: docs
 baseurl: "/yummy" 
 url: ""
 github_username:  danyzh00
-collections:
-  recipes: {type: dani}
 
 # Build settings
 markdown: kramdown

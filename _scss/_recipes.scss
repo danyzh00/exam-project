@@ -1,0 +1,204 @@
+.recipe-content {
+  background: rgb(114, 114, 114);
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recipe-short-info {
+  position: relative;
+  color: pink;
+  text-align: center;
+  padding-top: 3em;
+}
+
+.recipe-name {
+  opacity: 0.5;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3em;
+  h2 {
+    width: 15em;
+  }
+}
+
+.types ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.types ul li {
+  width: fit-content;
+  background: pink;
+  color: white;
+  padding-right: 1em;
+}
+
+.recipe-header img {
+  padding: 2em;
+  height: 35em;
+}
+
+.recipe-how-to {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10em;
+}
+
+.recipe-how-to .left {
+  border: 2px solid white;
+  margin: 0 5em 0 5em;
+  width: fit-content;
+  height: fit-content;
+}
+
+.recipe-how-to .left .top {
+  background: pink;
+  h1 {
+    font-size: 2em;
+    text-align: center;
+    width: 10em;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background: black;
+    padding-left: 5em;
+    li {
+      width: fit-content;
+      color: white;
+    }
+  }
+}
+
+.recipe-how-to .left .top img {
+  position: relative;
+  bottom: 3em;
+  left: 5em;
+  border-radius: 100%;
+  width: 10em;
+}
+
+.recipe-how-to .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.more-recipes {
+  background: rgb(53, 53, 53);
+  padding: 4em 10em;
+}
+
+.more-recipes ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.more-recipes ul li {
+  padding-right: 2em;
+  display: flex;
+  flex-direction: row;
+}
+
+.more-recipes ul li img{
+    padding-right: 1em;
+}
+
+.more-recipes ul li .info-more-recipes {
+  display: flex;
+  flex-direction: column;
+  .type {
+      background: rgb(252, 2, 84);
+      width: fit-content;
+      padding: 0.3em;
+      border-radius: .5em;
+  }
+}
+
+.buttons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.buttons li {
+  margin: 1em;
+  padding: 1em;
+  background: black;
+  color: white;
+}
+
+.left h3 {
+  padding-left: 1em;
+}
+
+.left h3 + h3 {
+  padding-top: 1em;
+  padding-left: 1em;
+  color: gainsboro;
+  opacity: 0.6;
+}
+
+.salad {
+  margin: 2em;
+}
+
+.salad li {
+  opacity: 0.7;
+}
+
+.description {
+  p {
+    padding-bottom: 1em;
+    opacity: 0.6;
+  }
+}
+
+.instructions {
+  h2 {
+    padding-top: 1em;
+  }
+}
+
+.instructions ul {
+  list-style-type: decimal;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.instructions ul li {
+  padding-bottom: 1em;
+  opacity: 0.6;
+}
+
+.notes {
+  .note-1,
+  .note-2 {
+    background: white;
+    margin-bottom: 1em;
+    padding: 1em;
+    span {
+      width: fit-content;
+      background: rgb(252, 2, 84);
+      color: white;
+      border-radius: 100%;
+      padding: 0.5em;
+    }
+    p {
+      opacity: 0.7;
+    }
+  }
+}

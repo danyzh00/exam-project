@@ -1,12 +1,16 @@
+{% if page.title != 'Home' %}
+<h2>HELELE</h2>
+{%endif%}
+{% if page.title == 'Home'  %}
 <div class="logo">
     <img src="../images/logo.png" alt="logo">
 </div>
 <nav>
     <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Recipes</a></li>
-        <li><a href="">Best Of</a></li>
-        <li><a href="">Contact</a></li>
+        {% assign navigation_pages = site.pages | sort:"order" %}
+        {% for current_page in navigation_pages %}
+        <li><a href="{{site.baseurl}}{{current_page.url}}">{{current_page.title}}</a></li>
+        {%endfor%}
         <li><a href=""><i class="fa fa-search"></i></a></li>
     </ul>
 </nav>
@@ -38,3 +42,4 @@
         </div>
     </div>
 </div>
+{%endif%}
