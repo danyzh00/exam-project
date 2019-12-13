@@ -1,44 +1,65 @@
 {% if page.title != 'Home' %}
-<h2>HELELE</h2>
+<div class="header-1">
+    <div class="top-header">
+        <div class="logo"><a href="{{site.baseurl}}/"><img src="../images/little-logo.png" alt=""></a></div>
+        <nav class="nav-bar">
+            <ul>
+                {% assign navigation_pages = site.pages | sort:"order" %}
+                {% for current_page in navigation_pages %}
+                <li><a href="{{site.baseurl}}{{current_page.url}}">{{current_page.title}}</a></li>
+                {%endfor%}
+                <li><a href=""><i class="fa fa-search"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="bottom-header">
+        <form action="">
+            <input type="text" name="" id="" placeholder="Search recipe">
+            <button>Search</button>
+        </form>
+    </div>
+</div>
 {%endif%}
 {% if page.title == 'Home'  %}
-<div class="logo">
-    <img src="../images/logo.png" alt="logo">
-</div>
-<nav>
-    <ul>
-        {% assign navigation_pages = site.pages | sort:"order" %}
-        {% for current_page in navigation_pages %}
-        <li><a href="{{site.baseurl}}{{current_page.url}}">{{current_page.title}}</a></li>
-        {%endfor%}
-        <li><a href=""><i class="fa fa-search"></i></a></li>
-    </ul>
-</nav>
-<div class="gallery">
-    <div class="left">
-        <div class="el">
-            <img src="../images/recipe-1.jpg" alt="">
-            <h1>Raw Vegan Carrot Cake Bites with Avocado</h1>
-        </div>
-        <div class="el">
-            <img src="../images/recipe-2.jpg" alt="">
-            <h1>One Pot Weeknight Lasagna Soup Recipe</h1>
-        </div>
+<div class="header-2">
+    <div class="logo">
+        <img src="../images/logo.png" alt="logo">
     </div>
-    <div class="middle">
-        <div class="el-mid">
-            <img src="../images/recipe-3.jpg" alt="">
-            <h1>Cannellini Aglio e Olio with Salmon</h1>
+    <nav class="home-nav-bar">
+        <ul>
+            {% assign navigation_pages = site.pages | sort:"order" %}
+            {% for current_page in navigation_pages %}
+            <li><a href="{{site.baseurl}}{{current_page.url}}">{{current_page.title}}</a></li>
+            {%endfor%}
+            <li><a href=""><i class="fa fa-search"></i></a></li>
+        </ul>
+    </nav>
+    <div class="gallery">
+        <div class="left">
+            <div class="el">
+                <img src="../images/recipe-1.jpg" alt="">
+                <h1>Raw Vegan Carrot Cake Bites with Avocado</h1>
+            </div>
+            <div class="el">
+                <img src="../images/recipe-2.jpg" alt="">
+                <h1>One Pot Weeknight Lasagna Soup Recipe</h1>
+            </div>
         </div>
-    </div>
-    <div class="right">
-        <div class="el">
-            <img src="../images/recipe-4.jpg" alt="">
-            <h1>Beef Burger with French Fries and Salad</h1>
+        <div class="middle">
+            <div class="el-mid">
+                <img src="../images/recipe-3.jpg" alt="">
+                <h1>Cannellini Aglio e Olio with Salmon</h1>
+            </div>
         </div>
-        <div class="el">
-            <img src="../images/recipe-5.jpg" alt="">
-            <h1>Raspberry Pancakes with Honey and Butter</h1>
+        <div class="right">
+            <div class="el">
+                <img src="../images/recipe-4.jpg" alt="">
+                <h1>Beef Burger with French Fries and Salad</h1>
+            </div>
+            <div class="el">
+                <img src="../images/recipe-5.jpg" alt="">
+                <h1>Raspberry Pancakes with Honey and Butter</h1>
+            </div>
         </div>
     </div>
 </div>
