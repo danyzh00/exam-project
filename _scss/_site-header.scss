@@ -38,6 +38,7 @@
 
 .header-2 .gallery {
   h1 {
+    font-size: 1.6em;
     text-align: center;
     opacity: 0.5;
   }
@@ -68,6 +69,16 @@
 
 .header-2 .gallery .middle .el-mid img {
   width: 40em;
+}
+
+.header-2 .middle h1 {
+  font-size: 2em;
+  opacity: 1;
+  background: white;
+  position: relative;
+  bottom: 1em;
+  left: 5em;
+  width: 10em;
 }
 
 .header-1 {

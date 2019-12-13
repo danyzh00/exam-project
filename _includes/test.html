@@ -7,72 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr NaNfr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-template-areas: "miniUp pickBig pickBig mini2up""mini pickBig pickBig mini2down";
-        }
-
-        .pickBig {
-            grid-area: pickBig;
-        }
-
-        .mini {
-            grid-area: mini;
-        }
-
-        .miniUp {
-            grid-area: miniUp;
-        }
-
-        .mini2up {
-            grid-area: mini2up;
-        }
-
-        .mini2down {
-            grid-area: mini2down;
-        }
-
-        .flex-container {
+        body {
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
         }
 
-        .flex-container .left,
-        .flex-container .right {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .image {
+            display: inline-block;
+        }
+
+        img {
+            position: relative;
+            z-index: -1;
+            width: 10em;
+            height: 10em;
+        }
+
+        p {
+            opacity: 1;
+            position: relative;
+            bottom: 10em;
+        }
+
+
+        .image:hover span {
+            background-color: rgba(224, 18, 214, 0.25);
+            transition: background-color 1s ease-in-out;
+        }
+
+        .image:hover p {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .image span {
+            width: 10em;
+            height: 10em;
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="pickBig"> <img src="../images/recipe-3.jpg" alt=""></div>
-        <div class="mini"><img src="../images/recipe-2.jpg" alt=""></div>
-        <h1>Hello</h1>
-        <div class="miniUp"><img src="../images/recipe-1.jpg" alt=""></div>
-        <div class="mini2up"> <img src="../images/recipe-4.jpg" alt=""></div>
-        <div class="mini2down"> <img src="../images/recipe-5.jpg" alt=""></div>
-    </div>
-
-    <div class="flex-container">
-        <div class="left">
-            <div class="mini"><img src="../images/recipe-2.jpg" alt=""></div>
-            <h1>Hello</h1>
-            <div class="miniUp"><img src="../images/recipe-1.jpg" alt=""></div>
-            <h1>Hello</h1>
-        </div>
-        <div class="pickBig"> <img src="../images/recipe-3.jpg" alt=""></div>
-        <div class="right">
-            <div class="mini2up"> <img src="../images/recipe-4.jpg" alt=""></div>
-            <h1>Hello</h1>
-            <div class="mini2down"> <img src="../images/recipe-5.jpg" alt=""></div>
-            <h1>Hello</h1>
-        </div>
+    <div class="image">
+        <span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiuSZNSTgykfjYwWHRasiZ-i77rzgqOUNm8rxu-_O4Q4MaLTbC&s"
+                alt="">
+        </span>
     </div>
 </body>
 

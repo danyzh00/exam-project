@@ -29,6 +29,10 @@
   padding-top: 1em;
 }
 
+.left p:last-child a {
+  color: green;
+}
+
 .right {
   display: flex;
   flex-direction: column;
