@@ -36,6 +36,22 @@
   padding: 3em;
 }
 
+@include bp(tablet) {
+  .header-2 .gallery {
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+  }
+}
+
+@include bp(phone) {
+  .header-2 .gallery {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+  }
+}
+
 .header-2 .gallery {
   h1 {
     font-size: 1.6em;
@@ -52,33 +68,74 @@
 }
 
 .header-2 .gallery .middle {
-  padding: 0 2em 0 2em;
+  margin: 0 2em 0 2em;
+}
+
+.header-2 .gallery .middle {
+  @include bp(tablet) {
+    padding: 0;
+  }
+}
+
+.header-2 .gallery .middle {
+  @include bp(phone) {
+    padding: 0;
+  }
 }
 
 .header-2 .gallery .left .el,
 .header-2 .gallery .right .el {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
 }
 
 .header-2 .gallery .left .el img,
 .header-2 .gallery .right .el img {
-  width: 20em;
+  width: 100%;
+  height: auto;
 }
 
 .header-2 .gallery .middle .el-mid img {
-  width: 40em;
+  width: 100%;
+  height: auto;
 }
 
 .header-2 .middle h1 {
-  font-size: 2em;
-  opacity: 1;
+  width: 100%;
   background: white;
+  opacity: 1;
+  font-size: 2em;
   position: relative;
   bottom: 1em;
-  left: 5em;
-  width: 10em;
+  padding: 0.7em;
+}
+
+@include bp(tablet) {
+  .header-2 .middle h1 {
+    margin: 0;
+    font-size: 1.3em;
+  }
+}
+@include bp(phone) {
+  .header-2 .middle h1 {
+    margin: 0;
+    font-size: 1em;
+  }
+}
+
+@include bp(tablet) {
+  .header-2 .middle {
+    order: -1;
+  }
+}
+
+@include bp(phone) {
+  .header-2 .middle {
+    order: -1;
+  }
 }
 
 .header-1 {
@@ -94,9 +151,13 @@
   flex-direction: row;
   align-items: center;
   padding: 2em;
+
+  @include bp(phone) {
+    flex-direction: column;
+  }
 }
 
-.header-1 .top-header ul {
+.header-1 .top-header .nav-bar ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -121,7 +182,7 @@
   background-image: url(../images/search-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   height: 20em;
 }
 
@@ -129,6 +190,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include bp(phone) {
+    flex-direction: column;
+  }
 }
 
 .header-1 .bottom-header form {
@@ -137,6 +201,9 @@
     width: 20em;
     padding: 1em;
     margin-right: 1em;
+    @include bp(phone) {
+      margin-bottom: 1em;
+    }
   }
   button {
     border: none;
