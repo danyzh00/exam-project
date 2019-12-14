@@ -40,8 +40,9 @@
 }
 
 .recipe-header img {
+  width: 100%;
+  height: auto;
   padding: 2em;
-  height: 35em;
 }
 
 .recipe-how-to {
@@ -59,6 +60,8 @@
 }
 
 .recipe-how-to .left .top {
+  display: flex;
+  flex-direction: column;
   background: pink;
   h1 {
     font-size: 2em;
@@ -82,9 +85,10 @@
 .recipe-how-to .left .top img {
   position: relative;
   bottom: 3em;
-  left: 5em;
   border-radius: 100%;
-  width: 10em;
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto;
 }
 
 .recipe-how-to .right {
@@ -110,18 +114,23 @@
   flex-direction: row;
 }
 
-.more-recipes ul li img{
-    padding-right: 1em;
+.more-recipes ul li img {
+  max-width: 100%;
+  height: auto;
+  padding-right: 1em;
 }
 
 .more-recipes ul li .info-more-recipes {
   display: flex;
   flex-direction: column;
   .type {
-      background: rgb(252, 2, 84);
-      width: fit-content;
-      padding: 0.3em;
-      border-radius: .5em;
+    background: rgb(252, 2, 84);
+    width: fit-content;
+    padding: 0.3em;
+    border-radius: 0.5em;
+  }
+  h4 {
+    color: white;
   }
 }
 
@@ -200,5 +209,87 @@
     p {
       opacity: 0.7;
     }
+  }
+}
+
+@include bp(tablet) {
+  .recipe-how-to {
+    flex-direction: column;
+  }
+  .recipe-how-to .left {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .recipe-how-to .left .top {
+    margin: 0 auto;
+  }
+
+  .recipe-how-to .left .top img {
+    bottom: 4em;
+  }
+
+  .recipe-how-to .left .top h1 {
+    margin: 0 auto;
+  }
+
+  .more-recipes ul {
+    flex-direction: column;
+  }
+
+  .more-recipes ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .more-recipes ul li img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  .more-recipes ul li .info-more-recipes {
+    justify-content: space-evenly;
+  }
+}
+
+@include bp(phone) {
+  .recipe-how-to {
+    flex-direction: column;
+  }
+  .recipe-how-to .left {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .recipe-how-to .left .top {
+    margin: 0 auto;
+  }
+
+  .recipe-how-to .left .top img {
+    bottom: 4em;
+  }
+
+  .recipe-how-to .left .top h1 {
+    margin: 0 auto;
+  }
+
+  .more-recipes ul {
+    flex-direction: column;
+  }
+
+  .more-recipes ul li img {
+    width: 40%;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  .more-recipes ul li .info-more-recipes {
+    justify-content: space-evenly;
   }
 }
