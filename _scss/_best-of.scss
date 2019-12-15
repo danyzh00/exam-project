@@ -14,14 +14,14 @@
 
 .best-of-gallery div img {
   @include img-size(100%);
-  transition: box-shadow .3s;
-  border-radius:10px;
+  transition: box-shadow 0.3s;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
 .best-of-gallery div img:hover {
-  box-shadow: 0 0 11px rgba(2, 209, 167, 4); 
-} 
+  box-shadow: 0 0 11px rgba(2, 209, 167, 4);
+}
 
 .best-of-featured-recipes {
   background: rgb(248, 249, 251);
