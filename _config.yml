@@ -2,7 +2,7 @@ title: Yummy
 email: dany.zh.00@gmail.com
 description: Food is everywhere!
 destination: docs
-baseurl: "/yummy" 
+baseurl: "yummy" 
 url: ""
 github_username:  danyzh00
 
