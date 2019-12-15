@@ -9,30 +9,43 @@
 .comment-section form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
 }
 
-.comment-section form .name-email {
-  display: flex;
+.comment-section form .name-email,
+.comment-section form .subject,
+.comment-section .comment {
+  flex: 1;
+  display: flex !important;
+  font-size: 1.5em;
 }
+
+.comment-section form .name-email input,
+.comment-section form .subject input,
+.comment-section form .comment textarea {
+  border: none;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
 .comment-section form .name-email input {
-  padding: 1em 12em 1em 2em;
-  margin-right: 2em;
+  flex: 1 !important;
+}
+
+.comment-section form .name-email input:last-child {
+  margin-left: 1em;
 }
 
 .comment-section form .subject input {
-  padding: 1em 39.89em 1em 2em;
-  margin: 1em 0;
+  flex: 1 !important;
 }
 
 .comment-section form .comment textarea {
-  font-size: 1.5em;
-  width: 100%;
-  height: 100%;
-  height: 50vh;
-  width: 56vw;
+  flex: 1 !important;
   resize: none;
-  padding: 1em;
-  margin-bottom: 1em;
+  padding: 1em 1em 15em 1em;
+  font-size: 1em;
 }
 
 .comment-section form button {
@@ -46,8 +59,61 @@
 
 iframe {
   width: 100%;
-  height: 100%;
   height: 50vh;
   padding: 0;
   margin: 0;
+}
+
+@include bp(tablet) {
+  .comment-section form {
+    font-size: 2em;
+  }
+  .comment-section form .name-email {
+    flex-direction: column;
+  }
+
+  .comment-section form .name-email,
+  .comment-section form .subject,
+  .comment-section .comment {
+    flex: 1;
+    display: flex !important;
+    font-size: 1.3em;
+  }
+
+  .comment-section form .name-email input,
+  .comment-section form .subject input,
+  .comment-section form .comment textarea {
+    margin-bottom: 0.75em;
+  }
+
+  .comment-section form .name-email input:last-child {
+    margin-left: 0;
+  }
+}
+
+@include bp(phone) {
+  .comment-section form {
+    font-size: 2em;
+  }
+  .comment-section form .name-email {
+    flex-direction: column;
+  }
+
+  .comment-section form .name-email,
+  .comment-section form .subject,
+  .comment-section .comment {
+    flex: 1;
+    display: flex !important;
+    font-size: 1em;
+  }
+
+  .comment-section form .name-email input,
+  .comment-section form .subject input,
+  .comment-section form .comment textarea {
+    margin-bottom: 0.75em;
+  }
+
+  .comment-section form .name-email input:last-child {
+    margin-left: 0;
+  }
 }
