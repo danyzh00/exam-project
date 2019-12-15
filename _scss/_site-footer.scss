@@ -1,25 +1,21 @@
 .site-footer {
-  display: flex;
-  flex-direction: column;
-  background: rgb(234, 237, 242);
+  @include flexrowcol(column);
+  background: $footer-color;
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
   margin: 5em 5em 0 5em;
 }
 
 .wrapper .top {
-  display: flex;
-  flex-direction: row;
+  @include flexrowcol(row);
   justify-content: space-between;
   margin-bottom: 3em;
 }
 
 .wrapper .top .left {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
 }
 
 .wrapper .top .left img {
@@ -36,8 +32,7 @@
 }
 
 .wrapper .top .right {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
 }
 
 .wrapper .top .right h1 {
@@ -61,8 +56,7 @@
 }
 
 .wrapper .top .right .social-media ul {
-  display: flex;
-  flex-direction: row;
+  @include flexrowcol(row);
   list-style: none;
   text-decoration: none;
 }
@@ -87,42 +81,12 @@
   }
 }
 
+@include bp(mobile) {
+  @include responsive-footer;
+}
+
 @include bp(tablet) {
-  .wrapper {
-    flex-direction: column;
-    font-size: 1em;
-  }
-  .wrapper .top {
-    flex-direction: column;
-  }
-  .wrapper .top .left img {
-    align-self: center;
-  }
-  .wrapper .left p {
-    align-self: center;
-  }
-  .wrapper .right h1 {
-    align-self: center;
-  }
-  .wrapper .subscribe {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: center;
-    button {
-      margin-top: 1em;
-    }
-  }
-  .wrapper .top .social-media {
-    align-self: center;
-  }
-  .wrapper .top .social-media ul {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .wrapper .bottom {
-    align-self: center;
-  }
+  @include responsive-footer;
 }
 
 @include bp(phone) {
@@ -143,8 +107,7 @@
     align-self: center;
   }
   .wrapper .subscribe {
-    display: flex;
-    flex-direction: column;
+    @include flexrowcol(column);
     align-self: center;
     align-items: center;
     button {

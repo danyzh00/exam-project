@@ -1,10 +1,9 @@
 .recipe-content {
-  background: rgb(114, 114, 114);
+  background: $main-color;
 }
 
 .recipe-header {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
   justify-content: center;
 }
 
@@ -25,30 +24,14 @@
   }
 }
 
-.types ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.types ul li {
-  width: fit-content;
-  background: pink;
-  color: white;
-  padding-right: 1em;
-}
-
 .recipe-header img {
-  width: 100%;
-  height: auto;
+  @include img-size(100%);
   padding: 2em;
 }
 
 .recipe-how-to {
-  display: flex;
+  @include flexrowcol(row);
   justify-content: center;
-  flex-direction: row;
   padding: 10em;
 }
 
@@ -60,8 +43,7 @@
 }
 
 .recipe-how-to .left .top {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
   background: pink;
   h1 {
     font-size: 2em;
@@ -69,10 +51,9 @@
     width: 10em;
   }
   ul {
+    @include flexrowcol(row);
     list-style: none;
-    display: flex;
     justify-content: center;
-    flex-direction: row;
     background: black;
     padding-left: 5em;
     li {
@@ -86,14 +67,12 @@
   position: relative;
   bottom: 3em;
   border-radius: 100%;
-  max-width: 50%;
-  height: auto;
+  @include img-size(50%);
   margin: 0 auto;
 }
 
 .recipe-how-to .right {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
 }
 
 .more-recipes {
@@ -103,26 +82,22 @@
 
 .more-recipes ul {
   list-style: none;
-  display: flex;
+  @include flexrowcol(row);
   justify-content: center;
-  flex-direction: row;
 }
 
 .more-recipes ul li {
   padding-right: 2em;
-  display: flex;
-  flex-direction: row;
+  @include flexrowcol(row);
 }
 
 .more-recipes ul li img {
-  max-width: 100%;
-  height: auto;
+  @include img-size(100%);
   padding-right: 1em;
 }
 
 .more-recipes ul li .info-more-recipes {
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
   .type {
     background: rgb(252, 2, 84);
     width: fit-content;
@@ -136,9 +111,8 @@
 
 .buttons {
   list-style: none;
-  display: flex;
+  @include flexrowcol(row);
   justify-content: center;
-  flex-direction: row;
 }
 
 .buttons li {
@@ -181,11 +155,9 @@
 }
 
 .instructions ul {
-  list-style-type: decimal;
+  @include flexrowcol(column);
   list-style: none;
-  display: flex;
   justify-content: center;
-  flex-direction: column;
 }
 
 .instructions ul li {
@@ -193,78 +165,49 @@
   opacity: 0.6;
 }
 
-.notes {
-  .note-1,
-  .note-2 {
-    background: white;
+.note {
+  @include flexrowcol(column);
+  span {
+    width: fit-content;
+    background: rgb(252, 2, 84);
+    color: white;
+    border-radius: 100%;
+    padding: 0.5em;
     margin-bottom: 1em;
+  }
+  p {
     padding: 1em;
-    span {
-      width: fit-content;
-      background: rgb(252, 2, 84);
-      color: white;
-      border-radius: 100%;
-      padding: 0.5em;
-    }
-    p {
-      opacity: 0.7;
-    }
+    border-radius: 0.5em;
+    transform: scale(0);
   }
 }
 
+.note:hover {
+  p {
+    transition: transform 1s ease-in-out, background 1s ease-in-out;
+    opacity: 1;
+    background: white;
+    transform: scale(1);
+  }
+}
+
+@include bp(mobile) {
+  @include responsive-recipes;
+}
+
 @include bp(tablet) {
-  .recipe-how-to {
-    flex-direction: column;
-  }
-  .recipe-how-to .left {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: auto;
-  }
-
-  .recipe-how-to .left .top {
-    margin: 0 auto;
-  }
-
-  .recipe-how-to .left .top img {
-    bottom: 4em;
-  }
-
-  .recipe-how-to .left .top h1 {
-    margin: 0 auto;
-  }
-
-  .more-recipes ul {
-    flex-direction: column;
-  }
-
-  .more-recipes ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .more-recipes ul li img {
-    max-width: 50%;
-    height: auto;
-    margin-bottom: 1em;
-  }
-
-  .more-recipes ul li .info-more-recipes {
-    justify-content: space-evenly;
-  }
+  @include responsive-recipes;
 }
 
 @include bp(phone) {
   .recipe-how-to {
     flex-direction: column;
   }
+
   .recipe-how-to .left {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: auto;
+    @include img-size(100%);
   }
 
   .recipe-how-to .left .top {
@@ -284,8 +227,7 @@
   }
 
   .more-recipes ul li img {
-    width: 40%;
-    height: auto;
+    @include img-size(40%);
     margin-bottom: 1em;
   }
 

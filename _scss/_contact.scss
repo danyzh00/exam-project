@@ -1,16 +1,13 @@
 .comment-section {
   background: rgb(114, 114, 114);
   padding: 4em;
-  display: flex;
-  flex-direction: column;
+  @include flexrowcol(column);
   align-items: center;
 }
 
 .comment-section form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
+  @include flexrowcol(column);
+  @include img-size(100%);
 }
 
 .comment-section form .name-email,
@@ -64,31 +61,12 @@ iframe {
   margin: 0;
 }
 
+@include bp(mobile) {
+  @include responsive-contact;
+}
+
 @include bp(tablet) {
-  .comment-section form {
-    font-size: 2em;
-  }
-  .comment-section form .name-email {
-    flex-direction: column;
-  }
-
-  .comment-section form .name-email,
-  .comment-section form .subject,
-  .comment-section .comment {
-    flex: 1;
-    display: flex !important;
-    font-size: 1.3em;
-  }
-
-  .comment-section form .name-email input,
-  .comment-section form .subject input,
-  .comment-section form .comment textarea {
-    margin-bottom: 0.75em;
-  }
-
-  .comment-section form .name-email input:last-child {
-    margin-left: 0;
-  }
+  @include responsive-contact;
 }
 
 @include bp(phone) {
